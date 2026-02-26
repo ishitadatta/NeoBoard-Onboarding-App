@@ -8,6 +8,8 @@ This repository contains the full local app implementation: dashboard, phased ta
 
 This system was built from a multi-phase research process with the team:
 
+- **Industry sponsorship:** This project was completed as an **AWS industry-sponsored project**.
+- **Team structure:** Built by a **team of 4 members** from the **MS-HCI cohort**.
 - **R1 (Problem framing + proposal):** defined onboarding friction points in knowledge access, permissions, setup, and task dependency.
 - **R2 (Concept exploration):** designed early interaction flows for checklist guidance and contextual nudges.
 - **R3 (Prototype iteration):** refined feature structure into task progression, document support, and assistant-style help.
