@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NeoBoard Documentation Linker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="index.html">NeoBoard</a>
+        <nav class="top-nav">
+          <a href="index.html">Dashboard</a>
+          <a href="progress.html">Progress</a>
+          <a href="tasks.html">To-Do</a>
+          <a href="docs.html">Docs AI</a>
+          <a href="assistant.html">Assistant</a>
+        </nav>
+        <label class="search-wrap"><span>Search</span><input id="globalSearch" placeholder="Search docs and press Enter" /></label>
+        <div class="account">Customer name</div>
+      </header>
+
+      <main id="docsPage" class="content">
+        <div id="globalError" class="muted"></div>
+
+        <section class="card">
+          <div class="card-header"><h2>Documentation Linker (KB Lookup)</h2><span id="docsStatus" class="badge">Ready</span></div>
+          <p class="muted">Search a doubt. You get an AI summary first, then a guided lookup path with exact page and paragraph references across linked documents.</p>
+          <form id="kbLookupForm" class="row">
+            <input id="kbQuestion" placeholder="Example: How do I request cloud access and what approvals are needed?" required />
+            <button class="primary" type="submit">Find Answer Path</button>
+          </form>
+          <div id="kbSummary" class="card" style="margin-top:12px;display:none"></div>
+          <div id="kbGuide" class="card" style="margin-top:12px;display:none"></div>
+        </section>
+
+        <section class="card" style="margin-top:18px">
+          <div class="card-header">
+            <h2>Knowledge Base Documents</h2>
+            <div class="row" style="max-width:480px;width:100%">
+              <input id="docSearch" placeholder="Filter KB docs" />
+              <select id="docPhase" style="max-width:190px">
+                <option value="">All phases</option>
+                <option>Complete training</option>
+                <option>Unlock all accesses</option>
+                <option>Debug codebase</option>
+                <option>Commit to GitHub</option>
+                <option>Goals complete</option>
+                <option>General</option>
+              </select>
+            </div>
+          </div>
+          <ul id="docList" class="list"></ul>
+        </section>
+
+        <section class="card" style="margin-top:18px">
+          <div class="card-header"><h2>Document Link Graph (Top Semantic Links)</h2></div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>From</th><th>To</th><th>Score</th><th>Reason</th></tr>
+              </thead>
+              <tbody id="linkTableBody"></tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

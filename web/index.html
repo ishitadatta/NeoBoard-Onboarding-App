@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NeoBoard Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="index.html">NeoBoard</a>
+        <nav class="top-nav">
+          <a href="index.html">Dashboard</a>
+          <a href="progress.html">Progress</a>
+          <a href="tasks.html">To-Do</a>
+          <a href="docs.html">Docs AI</a>
+          <a href="assistant.html">Assistant</a>
+        </nav>
+        <label class="search-wrap"><span>Search</span><input id="globalSearch" placeholder="Search docs and press Enter" /></label>
+        <div class="account">Customer name</div>
+      </header>
+
+      <main class="content">
+        <div id="globalError" class="muted"></div>
+        <section class="dashboard-grid">
+          <section class="card progress-card">
+            <div class="card-header">
+              <h2>Automated Progress Tracker</h2>
+              <a class="button ghost" href="progress.html">Open</a>
+            </div>
+            <div id="milestoneList" class="milestones"></div>
+            <div class="progress-track"><div id="progressFill" class="progress-fill"></div></div>
+            <div class="progress-scale"><span>0%</span><span>25%</span><span>50%</span><span>75%</span><span>100%</span></div>
+          </section>
+
+          <section class="left-column">
+            <section class="card">
+              <div class="card-header"><h2>To-Do List</h2><a class="button ghost" href="tasks.html">Open</a></div>
+              <form id="dashboardTaskForm" class="row" style="margin-bottom:10px">
+                <input id="dashboardTaskInput" placeholder="Quick add task" required />
+                <select id="dashboardTaskPriority" style="max-width:130px">
+                  <option value="normal">Normal</option>
+                  <option value="high">High</option>
+                  <option value="low">Low</option>
+                </select>
+                <button class="primary" type="submit">Add</button>
+              </form>
+              <ul id="todoList" class="list"></ul>
+            </section>
+
+            <section class="card">
+              <div class="card-header"><h2>Documentation Linker</h2><a class="button ghost" href="docs.html">Open</a></div>
+              <p class="muted">Use this for KB lookup and page/paragraph guidance. Mark docs as read to advance progress.</p>
+              <ul id="docList" class="list"></ul>
+            </section>
+          </section>
+
+          <section class="card chatbot-card">
+            <div class="card-header"><h2>Your Onboarding Chatbot</h2><a class="button ghost" href="assistant.html">Open</a></div>
+            <div id="chatMessages" class="chat-messages"></div>
+            <div id="quickPrompts" class="quick-prompts"></div>
+            <form id="chatForm" class="row" style="margin-top:10px">
+              <input id="chatInput" placeholder="Ask onboarding question" required />
+              <button class="primary" type="submit">Send</button>
+            </form>
+          </section>
+        </section>
+      </main>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

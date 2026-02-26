@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NeoBoard Assistant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="index.html">NeoBoard</a>
+        <nav class="top-nav">
+          <a href="index.html">Dashboard</a>
+          <a href="progress.html">Progress</a>
+          <a href="tasks.html">To-Do</a>
+          <a href="docs.html">Docs AI</a>
+          <a href="assistant.html">Assistant</a>
+        </nav>
+        <label class="search-wrap"><span>Search</span><input id="globalSearch" placeholder="Search docs and press Enter" /></label>
+        <div class="account">Customer name</div>
+      </header>
+
+      <main id="assistantPage" class="content">
+        <div id="globalError" class="muted"></div>
+        <section class="card">
+          <div class="card-header"><h2>Onboarding AI Assistant</h2></div>
+          <div class="grid-two" style="margin-bottom:10px">
+            <label>
+              <span class="muted">Local LLM model (Ollama)</span>
+              <select id="modelSelect"></select>
+            </label>
+            <label>
+              <span class="muted">Retriever top-k documents</span>
+              <input id="topK" type="number" min="1" max="8" value="4" />
+            </label>
+          </div>
+          <div class="row" style="margin-bottom:10px">
+            <label style="max-width:240px">
+              <span class="muted">Temperature</span>
+              <input id="temperature" type="number" min="0" max="1" step="0.05" value="0.2" />
+            </label>
+          </div>
+
+          <div id="chatMessages" class="chat-messages"></div>
+          <div id="quickPrompts" class="quick-prompts"></div>
+          <form id="assistantForm" class="row" style="margin-top:10px">
+            <input id="assistantInput" placeholder="Ask a question about onboarding docs" required />
+            <button class="primary" type="submit">Ask</button>
+          </form>
+        </section>
+      </main>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

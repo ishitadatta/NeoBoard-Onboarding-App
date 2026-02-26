@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NeoBoard Progress</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="index.html">NeoBoard</a>
+        <nav class="top-nav">
+          <a href="index.html">Dashboard</a>
+          <a href="progress.html">Progress</a>
+          <a href="tasks.html">To-Do</a>
+          <a href="docs.html">Docs AI</a>
+          <a href="assistant.html">Assistant</a>
+        </nav>
+        <label class="search-wrap"><span>Search</span><input id="globalSearch" placeholder="Search docs and press Enter" /></label>
+        <div class="account">Customer name</div>
+      </header>
+
+      <main id="progressPage" class="content">
+        <div id="globalError" class="muted"></div>
+        <section class="card">
+          <div class="card-header">
+            <h2>Progress Tracker Details</h2>
+            <span id="progressLabel" class="badge">0% complete</span>
+          </div>
+          <div class="progress-track"><div id="progressFill" class="progress-fill"></div></div>
+          <div class="progress-scale"><span>0%</span><span>25%</span><span>50%</span><span>75%</span><span>100%</span></div>
+          <div id="progressComponents" class="muted" style="margin-top:10px"></div>
+        </section>
+
+        <section class="grid-two" style="margin-top:18px">
+          <section class="card">
+            <div class="card-header"><h2>Milestones</h2></div>
+            <ul id="milestonesList" class="list"></ul>
+          </section>
+
+          <section class="card">
+            <div class="card-header"><h2>Weekly Plans</h2></div>
+            <form id="weeklyPlanForm" class="row" style="margin-bottom:10px">
+              <input id="weekLabelInput" placeholder="Week label (e.g., Week 5)" required />
+              <input id="weekPlanInput" placeholder="Plan for this week" required />
+              <button class="primary" type="submit">Add</button>
+            </form>
+            <ul id="weeklyPlanList" class="list"></ul>
+          </section>
+        </section>
+
+        <section class="card" style="margin-top:18px">
+          <div class="card-header"><h2>Activity Calendar (Tasks done + Docs read)</h2></div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Date</th><th>Tasks Done</th><th>Docs Read</th></tr></thead>
+              <tbody id="calendarTableBody"></tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
