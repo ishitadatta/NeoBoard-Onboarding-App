@@ -131,7 +131,7 @@ NeoBoard-Onboarding-App/
 ## Run Locally
 
 ```bash
-cd "/Users/ishitadatta/GeorgiaTech/Sem 1/Research methods/Project/NeoBoard-Onboarding-App"
+cd "/NeoBoard-Onboarding-App"
 python3 server.py
 ```
 
